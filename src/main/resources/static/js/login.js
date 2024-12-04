@@ -14,7 +14,7 @@ document.getElementById("loginForm").addEventListener("submit",
         let password = document.getElementById("pwd").value;
 
         try{
-           let response = await fetch(`http://192.168.149.89:8080/login?email=${email}&password=${password}`, {
+           let response = await fetch(`https://192.168.149.89:8080/login?email=${email}&password=${password}`, {
             method: "POST"
            });
 
@@ -30,7 +30,7 @@ document.getElementById("loginForm").addEventListener("submit",
            window.location.href = `main.html?user=${user}&email=${email}`;
         }
         catch(error){
-            alert("try again!")
+            alert("Somenting went wrong, try again!")
         }
     }
 )
