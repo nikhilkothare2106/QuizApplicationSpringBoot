@@ -13,7 +13,7 @@ let email = null;
 console.log(topic)
 async function fetchQuestion(){
     try{
-       const response = await fetch(`https://192.168.149.89:8443/quiz/get-questions?topic=${topic}`);
+       const response = await fetch(`https://quizapplicationspringboot-production-e821.up.railway.app/quiz/get-questions?topic=${topic}`);
 
        if(!response.ok){
         throw new Error("Can't connect to serber");

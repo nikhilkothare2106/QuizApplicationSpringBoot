@@ -14,7 +14,7 @@ document.getElementById("loginForm").addEventListener("submit",
         let password = document.getElementById("pwd").value;
 
         try{
-           let response = await fetch(`https://192.168.149.89:8443/login?email=${email}&password=${password}`, {
+           let response = await fetch(`https://quizapplicationspringboot-production-e821.up.railway.app/login?email=${email}&password=${password}`, {
             method: "POST"
            });
 
