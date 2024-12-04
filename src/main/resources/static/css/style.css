@@ -1,0 +1,240 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: clamp(10px, 1.5vw, 16px);
+    scroll-behavior: smooth;
+}
+  
+.landing-page{
+    background-color: white;
+    background-image: url("/images/bg1.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+.home{
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+.landing-page .heading{
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+.top{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+header{
+    /* height: 5rem; */
+    background-color: rgb(20, 64, 82);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+header .head{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+.nav{
+    /* background-color: aqua; */
+    /* height: 100%; */
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+header .login, header .profile{
+    /* background-color: blue; */
+    /* height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-right: 2%;
+}
+header .profile a{
+    display: none;
+}
+
+.sign{
+    display: none;
+    position: absolute;
+    font-size: 1.6rem;
+    color: blue;
+    cursor: pointer;
+    background-color: rgb(20, 64, 82, 0.9);
+    padding: 1.1rem 1.2rem;
+    top: 0%;
+    font-weight: 600;
+    width: 13%;
+    text-align: center;
+    text-decoration: underline;
+    /* background-color: red; */
+    transition: 2s linear ease-in;
+    border-radius: 0 0 4px 4px;
+    z-index: 1;
+}
+.signinout{
+    top: 100%;
+    display: block;
+
+}
+header a{
+    /* background-color: #036969; */
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(219, 218, 221);
+    padding: 1.4rem 1.2rem;
+    font-size: 150%;
+    font-weight: 600;
+    text-align: center;
+    /* border: 0.3px solid transparent; */
+}
+
+@media(max-width:390px){
+    .logo{
+        display: none;
+    }
+}
+header a:hover{
+    /* transition: 1s ease; */
+    border-radius: 0.6rem;
+    background-color: #adadb9;
+    color: black;
+}
+.logo{
+    background-image: url("/images/logo.png");
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    width: 6rem;
+    margin-left: 2%;
+}
+
+.quiz-heading{
+    text-align: center;
+    font-size: 3rem;
+}
+.package-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2rem;
+    /* background-color: red; */
+}
+.package-card{
+    min-width: 18rem;
+    max-width: 13.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    box-shadow: 0 0 10px gray;
+    border-radius: 5px;
+    margin: 0.7rem;
+}
+.package-card img{
+    width: 100%;
+    height: 200px;
+}
+.card-heading{
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.btn{
+    text-decoration: none;
+    color: white;
+    background-color: teal;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.5rem;
+}
+.btn:hover{
+    background-color:#036969;
+}
+.quiz-text{
+    font-size: 1.2rem;
+    text-align: justify;
+    padding: 0 2.2rem;
+}
+
+
+.Performer-quiz-section .image-card {
+    object-fit: cover;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.top-performer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+}
+.top-performer p{
+    font-size: 1.5rem;
+    margin: 0.3rem 0;
+}
+.notes-section{
+    text-align: center;
+    /* padding: 100px; */
+}
+
+.notes-section .notes-div{
+    margin-top: 20px;
+}
+
+.notes-section .notes-wrapper{
+    border: 2px solid black;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10x gray;
+    display: inline-block;
+    margin: 20px;
+}
+
+.notes-section .notes-wrapper img{
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+    
+}
+
+
+.notes-section .notes-wrapper img:hover{
+    transform: scale(1.1,1.1);
+    cursor: pointer;
+}
+
+.footer-section{
+    background-color: black;
+    padding: 30px;
+    text-align: center;
+    color: teal;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
