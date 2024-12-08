@@ -3,25 +3,21 @@ let questions = []
 let totalQuestions = 0
 let correctAnswer = 0;
 let nextbtn = document.getElementById("next-button");
-let topic = localStorage.getItem("topic")
+let topic = document.querySelector(".quiz-container h1").textContent;
 let selectedOption = null;
 
-let user = null;
-let email = null;
 
-
-console.log(topic)
 async function fetchQuestion(){
     try{
-       const response = await fetch(`https://quizapplicationspringboot-production-e821.up.railway.app/quiz/get-questions?topic=${topic}`);
+    const response = await fetch(`/get-questions?topic=${topic}`);
 
        if(!response.ok){
-        throw new Error("Can't connect to serber");
+        throw new Error("Can't connect to server");
        }
        
        questions = await response.json();
        totalQuestions = questions.length
-       document.getElementById("total-questions").textContent = totalQuestions
+       document.getElementById("total-questions").textContent = totalQuestions;
        displayQuestion();
        
     }
@@ -31,6 +27,7 @@ async function fetchQuestion(){
     }
 }
 
+window.onload = fetchQuestion;
 function displayQuestion(){
     if(index == questions.length){
         return
@@ -81,19 +78,7 @@ nextbtn.onclick = () =>{
         displayQuestion();
     }
     else{
-        localStorage.setItem('quizScore', correctAnswer); 
-        localStorage.setItem('totalQuestions', totalQuestions); 
+        window.location.href = `/result?quizScore=${correctAnswer}&totalQuestions=${totalQuestions}`; 
         
-        if(user && email){
-            window.location.href = `result.html?user=${user}&email=${email}`; 
-        }
     }
 }
-window.onload = fetchQuestion
-
-
-document.addEventListener("DOMContentLoaded", () =>{
-    user = new URLSearchParams(window.location.search).get("user");
-    email = new URLSearchParams(window.location.search).get("email");
-   
-})

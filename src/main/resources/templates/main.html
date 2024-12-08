@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,11 +20,13 @@
                     <a href="#notes">Notes</a>
                 </div>
             </div>
-            <div class="login">
-                <a href="login.html">Login</a>
-                <a href="signup.html">SignUp</a>
+            <div th:style="${name} ? 'display:none;' : 'display:flex;' " class="login">
+                <a href="/login">Login</a>
+                <a href="/signup">SignUp</a>
             </div>
-            <div class="profile"><a href="#"></a>
+            <div class="profile">
+                <a th:style="${name} != null ? 'display:block;' : 'display:none' " th:text="${name}" href="#">
+                </a>
             <div class="sign">Sign Out</div>
             </div>
         </header>
@@ -39,25 +41,25 @@
                 <img src="images/java.jpg" alt="">
                 <p class="card-heading">Java</p>
                 <!-- <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, excepturi voluptatum esse cum sit veritatis.</p> -->
-                <button class="btn" onclick="startQuiz('java')">Take Quiz</button>
+                <button class="btn" onclick="window.location.href='/quiz?topic=java'">Take Quiz</button>
             </div>
             <div class="package-card">
                 <img src="images/python.jpg" alt="">
                 <p class="card-heading">Python</p>
                 <!-- <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, excepturi voluptatum esse cum sit veritatis.</p> -->
-                <button class="btn" onclick="startQuiz('python')">Take Quiz</button>
+                <button class="btn" onclick="window.location.href='/quiz?topic=python'">Take Quiz</button>
             </div>
             <div class="package-card">
                 <img src="images/js.png" alt="">
                 <p class="card-heading">JavaScript</p>
                 <!-- <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, excepturi voluptatum esse cum sit veritatis.</p> -->
-                <button class="btn" onclick="startQuiz('javascript')">Take Quiz</button>
+                <button class="btn" onclick="window.location.href='/quiz?topic=javascript'">Take Quiz</button>
             </div>
             <div class="package-card">
                 <img src="images/cpp.jpeg" alt="">
                 <p class="card-heading">CPP</p>
                 <!-- <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, excepturi voluptatum esse cum sit veritatis.</p> -->
-                <button class="btn" onclick="startQuiz('cpp')">Take Quiz</button>
+                <button class="btn" onclick="window.location.href='/quiz?topic=cpp'">Take Quiz</button>
             </div>
 
         </div>

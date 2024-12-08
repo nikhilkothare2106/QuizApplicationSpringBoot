@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Java Quiz</title>
     <link rel="stylesheet" href="css/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script src="./js/signup.js" defer></script>
+    <script src="js/signup.js" defer></script>
 </head>
 <body>
     <div class="login-container">
         <h1 class="heading">Quiz Master</h1>
 
-        <div class="errorMessage"></div>
+        <div class="error-message" th:if="${error}" th:text="${error}"></div>
         <form action="/signup" method="post">
 
             <div class="quiz-info">
@@ -30,10 +30,10 @@
                <input type="password" class="pwd" placeholder="Confirm Password" name="confirmPassword" required>
             </div>
            
-            <div class="error-message" th:if="${error}" th:text="${error}"></div>
+           
             <button id="login-button" class="login-button">Sign Up</button>
             <br>
-            <a href="login.html" class="sign">Already have an account?</a>
+            <a href="/login" class="sign">Already have an account?</a>
         </form>
     </div>
 </body>

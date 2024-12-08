@@ -15,6 +15,7 @@ public class User {
     public User(){
 
     }
+
     public User(String email, String name, String gender, String password) {
         this.email = email;
         this.name = name;
@@ -53,4 +54,5 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

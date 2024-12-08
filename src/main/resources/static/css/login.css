@@ -107,10 +107,9 @@ html {
     font-size: 1.2rem;
 }
 
-.errorMessage{
+.error-message{
     color: rgb(224, 11, 11);
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 3px;
-    display: none;
 }

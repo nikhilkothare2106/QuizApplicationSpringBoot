@@ -14,7 +14,7 @@ public class UserService {
     private UserRepo userRepo;
 
     public boolean createUser(String email,String name,String gender,String password){
-        if(userRepo.findByEmail(email) != null){//user already registred
+        if(userRepo.findByEmailAndPassword(email,password) != null){//user already registred
             return false;
         }
         User user = new User();
@@ -28,7 +28,7 @@ public class UserService {
 
     public List<String> getUser(String email, String password){
 
-        User user = userRepo.findByEmail(email);
+        User user = userRepo.findByEmailAndPassword(email,password);
         if(user == null){
             return null;
         }
