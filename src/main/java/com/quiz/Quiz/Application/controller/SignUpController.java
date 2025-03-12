@@ -32,7 +32,7 @@ public class SignUpController {
 
         if (userService.createUser(user.getEmail(), user.getName(), user.getGender(), user.getPassword())) {
             model.addAttribute("success","Sucessfully Registered!");
-            return "login"; // Redirect to login page after successful sign-up
+            return "signup"; // Redirect to login page after successful sign-up
         } else {
             model.addAttribute("error","User with this email already exists");
             return "signup"; // Return to sign-up page with error

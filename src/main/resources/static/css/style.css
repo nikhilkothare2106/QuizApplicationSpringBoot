@@ -113,8 +113,7 @@ header a{
 header a:hover{
     /* transition: 1s ease; */
     border-radius: 0.6rem;
-    background-color: #adadb9;
-    color: black;
+    color: rgb(26, 125, 238);
 }
 .logo{
     background-image: url("/images/logo.png");

@@ -20,12 +20,13 @@
                     <a href="#notes">Notes</a>
                 </div>
             </div>
-            <div th:style="${name} ? 'display:none;' : 'display:flex;' " class="login">
+            <div style="display:flex" class="login">
                 <a href="/login">Login</a>
                 <a href="/signup">SignUp</a>
             </div>
+            <div style="display:none" th:text="${name}" class="demo"></div>
             <div class="profile">
-                <a th:style="${name} != null ? 'display:block;' : 'display:none' " th:text="${name}" href="#">
+                <a style="display:none" href="#">
                 </a>
             <div class="sign">Sign Out</div>
             </div>
